@@ -23,7 +23,7 @@ app.post('/auth/login', (req, res) => {
   res.json({ ok: true });
 });
 
-const PORT = 5000;
+const PORT = 8080;
 app.listen(PORT, () => {
   console.log(`TEST API on http://localhost:${PORT}`);
 });
