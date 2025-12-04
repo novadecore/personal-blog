@@ -1,0 +1,127 @@
+/* ===== Profile Page ===== */
+
+.profile-page-container {
+  min-height: calc(100vh - 64px);
+  padding: 40px 16px 64px;
+  display: flex;
+  justify-content: center;
+  background: radial-gradient(circle at top, #eef2ff 0, #f9fafb 40%, #ffffff 100%);
+}
+
+/* card body */
+.profile-card {
+  width: 100%;
+  max-width: 680px;
+  border-radius: 20px !important;
+  padding: 28px 24px 36px;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+
+  .ant-card-body {
+    padding: 0 !important;
+  }
+
+  h3.ant-typography {
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin-bottom: 8px;
+  }
+
+  .ant-typography-secondary {
+    font-size: 13px;
+  }
+}
+
+/* form styles */
+.profile-card .ant-form {
+  margin-top: 24px;
+
+  .ant-form-item-label > label {
+    font-size: 13px;
+    font-weight: 500;
+    color: #4b5563;
+  }
+
+  .ant-input,
+  .ant-input-textarea textarea {
+    border-radius: 10px;
+    padding: 8px 11px;
+    border-color: #e5e7eb;
+    background-color: #f9fafb;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+
+    &:hover {
+      border-color: #cbd5f5;
+    }
+
+    &:focus,
+    &.ant-input-focused {
+      border-color: #4f46e5;
+      box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.18);
+      background-color: #ffffff;
+      outline: none;
+    }
+  }
+}
+
+/* Avatar */
+.profile-card .avatar-preview {
+  width: 110px;
+  height: 110px;
+  border-radius: 999px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.18);
+  border: 1px solid #e2e8f0;
+  margin-bottom: 16px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.profile-card .avatar-placeholder {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: #f3f4f6;
+  color: #6b7280;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+/* Upload btn */
+.profile-card .ant-upload {
+  .ant-btn {
+    border-radius: 999px;
+    padding: 0 16px;
+    height: 36px;
+    font-weight: 500;
+  }
+}
+
+/* Save btn */
+.profile-card .ant-form-item:last-child {
+  margin-top: 12px;
+
+  .ant-btn-primary {
+    border-radius: 999px;
+    padding: 0 26px;
+    height: 40px;
+    font-weight: 500;
+    background: linear-gradient(135deg, #4f46e5, #6366f1);
+    border: none;
+    box-shadow: 0 12px 30px rgba(79, 70, 229, 0.35);
+
+    &:hover,
+    &:focus {
+      background: linear-gradient(135deg, #4338ca, #4f46e5);
+      box-shadow: 0 16px 38px rgba(79, 70, 229, 0.55);
+    }
+  }
+}

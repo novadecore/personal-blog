@@ -1,0 +1,260 @@
+/* ===== Common Layout Structure ===== */
+
+.public-layout,
+.admin-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.public-content,
+.admin-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Shared Header Layout ===== */
+
+.public-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 24px;
+}
+
+/* ===== Public Header ===== */
+
+.public-header .logo {
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+}
+
+/* ===== Button Styles: Purple Gradient CTA ===== */
+
+.purple-cta {
+  border-radius: 999px;
+  height: 36px;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  border: none;
+  color: white;
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
+  display: inline-flex;
+  align-items: center;
+}
+
+.purple-cta:hover,
+.purple-cta:focus {
+  background: linear-gradient(135deg, #4f46e5, #4338ca);
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.45);
+  color: white;
+}
+
+/* Apply CTA style to specific areas */
+.public-header .ant-btn-primary,
+.admin-layout .admin-bottom .ant-btn,
+.admin-header .back-button {
+  @extend .purple-cta;
+}
+
+.admin-layout .ant-menu-dark .ant-menu-item-selected {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: #ffffff;
+}
+
+.admin-layout .ant-menu-dark .ant-menu-item-selected .anticon {
+  color: #ffffff;
+}
+
+.admin-layout .ant-menu-item-selected::after {
+  display: none;
+}
+
+.admin-layout .ant-menu-dark .ant-menu-item {
+  height: 40px;
+  margin: 20px 8px;
+  border-radius: 8px;
+}
+
+.admin-layout .ant-menu-dark .ant-menu-item-selected {
+  height: 40px ;
+  line-height: 40px;
+}
+
+.admin-logo {
+  height: 40px;
+  justify-content: left;
+  margin-left: 24px;
+  margin-top: 12px;
+
+  .admin-logo-img {
+    height: 40px;
+    object-fit: contain;
+  }
+}
+
+.public-logo {
+  height: 40px;
+  justify-content: left;
+  margin-top: -25px;
+
+  .public-logo-img {
+    height: 40px;
+    object-fit: contain;
+  }
+}
+
+/* elements only displayed on desktop */
+.desktop-only {
+  display: block;
+}
+
+/* elements only displayed on mobile */
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: inline-flex;
+  }
+
+  .admin-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    background: #020617;
+
+    .hamburger {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.16);
+      color: #ffffff;
+      font-size: 18px;
+      padding: 0;
+      border: none;
+      margin-left: 0;
+    }
+
+    .hamburger .anticon {
+      font-size: 18px;
+    }
+
+    .back-button {
+      flex: none;
+      margin-left: 8px;
+      text-align: center;
+      height: 36px;
+      font-size: 14px;
+      border-radius: 999px;
+    }
+  }
+}
+
+/* ===== Mobile Admin Drawer Styles ===== */
+
+.admin-drawer .ant-drawer-header {
+  background: #020617;
+  border-bottom: none;
+  color: #ffffff;
+}
+
+.admin-drawer .ant-drawer-close {
+  color: #ffffff;
+}
+
+.admin-drawer .ant-drawer-body {
+  padding: 0;
+  background: #020617;
+}
+
+.admin-drawer .admin-logo {
+  padding: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.admin-drawer .admin-menu {
+  background: #020617;
+}
+
+.admin-drawer .admin-bottom {
+  padding: 12px 16px 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: #020617;
+}
+
+.admin-drawer .admin-bottom .ant-btn {
+  @extend .purple-cta;
+  width: 100%;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+
+  /* ===== Global font scale down for mobile ===== */
+
+  body,
+  .admin-layout,
+  .public-layout {
+    font-size: 14px !important;
+    line-height: 1.45 !important;
+  }
+
+  /* Page titles (Profile / Article Management / Display / etc.) */
+  h1, .page-title {
+    font-size: 20px !important;
+    line-height: 1.3 !important;
+  }
+
+  /* Section titles ("Display name", "Role", etc.) */
+  h2, h3, h4 {
+    font-size: 16px !important;
+  }
+
+  /* Form labels */
+  .ant-form-item-label > label {
+    font-size: 14px !important;
+  }
+
+  /* Form inputs */
+  .ant-input,
+  .ant-input-affix-wrapper,
+  .ant-select-selector,
+  textarea {
+    font-size: 14px !important;
+  }
+
+  /* Buttons */
+  .ant-btn {
+    font-size: 14px !important;
+  }
+
+  /* Menu text */
+  .ant-menu-item,
+  .ant-menu-item span {
+    font-size: 14px !important;
+  }
+
+  /* Card text (if used) */
+  .ant-card-head-title,
+  .ant-card-body {
+    font-size: 14px !important;
+  }
+}
